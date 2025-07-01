@@ -63,7 +63,28 @@ $("ul li a").unwrap();
 
 ```js
 $("a").click(function () {
-   $("a").text("clicou");
+    $("a").text("clicou");
+});
+
+$("a").on("click", function (event) {
+    event.preventDefault();
+    $(this).text("clicou"); // refere-se ao objeto do evento
+});
+
+$("a").mouseenter(function () {
+    $(this).text("mouse enter");
+});
+
+$("a").mouseleave(function () {
+    $(this).text("mouse leave");
+});
+
+$(document).scroll(function () {
+    $(this).text("scroll");
+});
+
+$(window).resize(function () {
+    $("a").text($("body").width());
 });
 ```
 
