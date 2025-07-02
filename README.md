@@ -115,5 +115,30 @@ $("a").click(function () {
 
 ---
 
+#### Métodos gerais
+
+```js
+// pega o valor de href
+var href = $("a").attr("href"); 
+
+// insere o valor em alt
+$("img").attr("alt", "alt imagem"); 
+
+$("a").removeAttr("href");
+
+// pega o valor em  input, select e textarea
+var name = $("input.name").val(); 
+// insere o valor
+$("input.name").val("teste"); 
+
+// remove o elemento
+$("a").remove(); 
+
+// remove todos os filhos do elemento
+$(".modal").empty(); 
+```
+
+---
+
 🔗 Links
 * [Documentação](https://api.jquery.com)  
