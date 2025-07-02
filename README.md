@@ -1,7 +1,7 @@
 Uma página só pode ser manipulada de forma segura quando o documento estiver pronto. 
 
 ```js
-$(document).ready(function () {
+$(document).ready(() => {
     // código
 });
 ```
@@ -62,28 +62,28 @@ $("ul li a").unwrap();
 #### Eventos básicos
 
 ```js
-$("a").click(function () {
+$("a").click(() => {
     $("a").text("clicou");
 });
 
-$("a").on("click", function (event) {
+$("a").on("click", (event) => {
     event.preventDefault();
     $(this).text("clicou"); // refere-se ao objeto do evento
 });
 
-$("a").mouseenter(function () {
+$("a").mouseenter(() => {
     $(this).text("mouse enter");
 });
 
-$("a").mouseleave(function () {
+$("a").mouseleave(() => {
     $(this).text("mouse leave");
 });
 
-$(document).scroll(function () {
+$(document).scroll(() => {
     $(this).text("scroll");
 });
 
-$(window).resize(function () {
+$(window).resize(() => {
     $("a").text($("body").width());
 });
 ```
@@ -93,19 +93,19 @@ $(window).resize(function () {
 #### Classes
 
 ```js
-$("a").click(function () {
+$("a").click(() => {
     $(this).addClass("active");
 });
 
-$("a").click(function () {
+$("a").click(() => {
     $(this).removeClass("active");
 });
 
-$("a").click(function () {
+$("a").click(() => {
     $(this).toggleClass("active");
 });
 
-$("a").click(function () {
+$("a").click(() => {
     let condition = $(this).hasClass("active");
     if (condition) {
         console.log("Possui a classe");
@@ -136,6 +136,31 @@ $("a").remove();
 
 // remove todos os filhos do elemento
 $(".modal").empty(); 
+```
+
+---
+
+#### Estilo 
+
+```js
+// retorna o valor
+var psize = $(".btn").css("font-size");
+
+// insere o valor 
+$(".btn").css("font-size", "20px");
+
+$("a").css({
+    "max-width": "200px",
+    "background": "blue"
+});
+
+$(document).scroll(() => {
+    var documentTop = $(this).scrollTop();
+    $(".modal").css("height", documentTop * 10);
+});
+
+var offset = $(".modal").offset().left();
+$(".modal").offset({top: 200, left: 0});
 ```
 
 ---
