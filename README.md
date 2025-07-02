@@ -166,4 +166,5 @@ $(".modal").offset({top: 200, left: 0});
 ---
 
 🔗 Links
-* [Documentação](https://api.jquery.com)  
+* [Documentação](https://api.jquery.com)   
+* [Tutorial](https://learn.jquery.com) 
