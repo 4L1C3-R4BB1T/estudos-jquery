@@ -90,5 +90,30 @@ $(window).resize(function () {
 
 ---
 
+#### Classes
+
+```js
+$("a").click(function () {
+    $(this).addClass("active");
+});
+
+$("a").click(function () {
+    $(this).removeClass("active");
+});
+
+$("a").click(function () {
+    $(this).toggleClass("active");
+});
+
+$("a").click(function () {
+    let condition = $(this).hasClass("active");
+    if (condition) {
+        console.log("Possui a classe");
+    }
+});
+```
+
+---
+
 🔗 Links
 * [Documentação](https://api.jquery.com)  
