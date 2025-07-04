@@ -1,7 +1,7 @@
 Uma página só pode ser manipulada de forma segura quando o documento estiver pronto. 
 
 ```js
-$(document).ready(() => {
+$(document).ready(function () {
     // código
 });
 ```
@@ -235,6 +235,13 @@ $("h2").eq(1).css("background", "blue");
 
 // remove da seleção
 $("a").not(".btn").css("background", "blue");
+```
+
+---
+
+```js
+// pega o valor dentro de um atributo que comece com data
+var aEstilo = $("a").data("estilo");
 ```
 
 ---
