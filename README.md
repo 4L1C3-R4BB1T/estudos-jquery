@@ -165,6 +165,35 @@ $(".modal").offset({top: 200, left: 0});
 
 ---
 
+#### Animação
+
+```js
+$(".modal").animate({
+    height: 300
+}, 1000); // velocidade da animação
+
+// animação atrás da outra
+$(".modal").animate({
+    height: 300
+}).animate({
+    width: 200
+});
+
+$(".modal").fadeIn();
+
+$(".modal").fadeOut();
+$(".modal").fadeOut(200);
+
+$(".modal").hide();
+$(".modal").show();
+
+$(".modal").slideUp();
+$(".modal").slideDown();
+$(".modal").slideToggle();
+```
+
+---
+
 🔗 Links
 * [Documentação](https://api.jquery.com)   
 * [Tutorial](https://learn.jquery.com) 
