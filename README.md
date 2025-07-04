@@ -66,20 +66,20 @@ $("a").click(() => {
     $("a").text("clicou");
 });
 
-$("a").on("click", (event) => {
+$("a").on("click", function (event) {
     event.preventDefault();
     $(this).text("clicou"); // refere-se ao objeto do evento
 });
 
-$("a").mouseenter(() => {
+$("a").mouseenter(function () {
     $(this).text("mouse enter");
 });
 
-$("a").mouseleave(() => {
+$("a").mouseleave(function () {
     $(this).text("mouse leave");
 });
 
-$(document).scroll(() => {
+$(document).scroll(function () {
     $(this).text("scroll");
 });
 
@@ -93,19 +93,19 @@ $(window).resize(() => {
 #### Classes
 
 ```js
-$("a").click(() => {
+$("a").click(function () {
     $(this).addClass("active");
 });
 
-$("a").click(() => {
+$("a").click(function () {
     $(this).removeClass("active");
 });
 
-$("a").click(() => {
+$("a").click(function () {
     $(this).toggleClass("active");
 });
 
-$("a").click(() => {
+$("a").click(function () {
     let condition = $(this).hasClass("active");
     if (condition) {
         console.log("Possui a classe");
@@ -154,7 +154,7 @@ $("a").css({
     "background": "blue"
 });
 
-$(document).scroll(() => {
+$(document).scroll(function () {
     var documentTop = $(this).scrollTop();
     $(".modal").css("height", documentTop * 10);
 });
@@ -190,6 +190,51 @@ $(".modal").show();
 $(".modal").slideUp();
 $(".modal").slideDown();
 $(".modal").slideToggle();
+```
+
+---
+
+#### Traversing
+
+```js
+$("a").each(function () {
+    // loop
+})
+
+// seleciona o parente mais próximo do elemento
+$("h2").click(function () {
+    $(this).closest("div").css("background", "blue");
+});
+
+// seleciona o pai do elemento
+$("h2").click(function () {
+    console.log($(this).parent());
+    // seleciona todos os elementos pai
+    // console.log($(this).parents());
+});
+
+// procura o elemento dentro dos filhos
+$("div").click(function () {
+    console.log($(this).find("span").text(););
+});
+
+// seleciona o primeiro elemento
+$(".btn").first().css("background", "blue");
+
+// seleciona o último elemento
+$(".btn").last().css("background", "blue");
+
+// seleciona o elemento anterior
+$(".btn").prev().css("background", "blue");
+
+// seleciona o próximo elemento
+$(".btn").next().css("background", "blue");
+
+// seleciona o elemento pelo index dele
+$("h2").eq(1).css("background", "blue");
+
+// remove da seleção
+$("a").not(".btn").css("background", "blue");
 ```
 
 ---
